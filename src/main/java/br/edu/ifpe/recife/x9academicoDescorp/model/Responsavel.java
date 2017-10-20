@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpe.recife.x9academicocorp.model.main;
+package br.edu.ifpe.recife.x9academicoDescorp.model;
 
-
-public class Main {
-    
-    
+/**
+ *
+ * @author aldo_neto
+ */
+public class Responsavel {
     
 }
