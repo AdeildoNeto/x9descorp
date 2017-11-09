@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<dataset>
+    
+    
+    
+    <endereco idEndereco="1"  cep="55.800-000" cidade="Olinda" numeroEndereco="321" rua="abc" uf="pe"></endereco>
+    <endereco idEndereco="2"  cep="54.860-000" cidade="Recife" numeroEndereco="3214" rua="abcd" uf="rs"></endereco>
+    <endereco idEndereco="3"  cep="57.880-000" cidade="Jaboatao" numeroEndereco="6847" rua="rua 3" uf="to"></endereco>
+      <endereco idEndereco="4"  cep="56.890-000" cidade="Recife" numeroEndereco="312" rua="rua 3" uf="to"></endereco>
+    <!-- Id do usuario = 1(Admin) -->
+    <usuario idUsuario="1" dtype="A" CPF="079.678.094-32" data_nascimento="1980-10-10" email="aaa@gmail.com" login="administrador" nome="Gilberto"
+             senha=".Ae12345" telefone="8189899876" idEndereco="1">
+    </usuario>
+    <!-- Id para professor -->
+    <usuario idUsuario="2" dtype="P" CPF="059.984.954-11" data_nascimento="1980-11-20" email="aaa@gmail.com" login="professor" nome="Lucas"
+             senha=".Ae12345" telefone="8199822989" idEndereco="2">
+    </usuario>
+    
+    <!-- Id pra responsavel -->
+    <usuario idUsuario="3" dtype="R" CPF="798.352.954-68" data_nascimento="1987-12-10" email="abcd@gmail.com" login="resp" nome="Valdeir"
+             senha=".Ae12345" telefone="8182989765" idEndereco="3">
+    </usuario>
+    
+     <usuario idUsuario="4" dtype="P" CPF="077.896.754-94" data_nascimento="1989-12-10" email="apsn@hotmail.com" login="prof2" nome="Aida"
+             senha=".Ae12345" telefone="8199998757" idEndereco="4">
+    </usuario>
+
+    
+    <administrador idAdministrador="1" cargo="Secretario"></administrador>
+    <professor idProfessor="2"></professor>
+    
+    <professor idProfessor="4"></professor>
+    <responsavel idResponsavel="3"></responsavel>
+    
+    <turma idTurma="1" numeroSala="21" qtdAluno="15" serie="Quinta" turno="Tarde" idProfessor="2" > </turma>
+    <turma idTurma="2" numeroSala="24" qtdAluno="20" serie="Primeira" turno="Manha" idProfessor="4"></turma>
+    
+    
+    <relatorioParental idRelatorioParental="1" criatividade="8.0" lideranca="9.0" motivacao="7.0" observacoes="OBS feita" participacaoEmSala="5.0" trabalhoEmEquipe="8.0"> </relatorioParental>
+   
+    <relatorioParental idRelatorioParental="2" criatividade="10.0" lideranca="4.0" motivacao="10.0" observacoes="nao ha OBS" participacaoEmSala="8.0" trabalhoEmEquipe="7.0"> </relatorioParental>
+
+    
+    <aluno idAluno="1" data_nascimento="2000-10-10" deficiencia="nao" matricula="a2015001" nome="Aldo" idResponsavel="3" idTurma="1"
+           idRelatorioParental="1"></aluno>
+    
+    <aluno idAluno="2" data_nascimento="1998-09-06" deficiencia="nao" matricula="a2015002" nome="Joao" idResponsavel="3" idTurma="1"
+           idRelatorioParental="2"></aluno>
+            
+    
+</dataset>
