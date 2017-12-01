@@ -131,7 +131,7 @@ public class JpqlCRUDTurma {
 
         turma = (Turma) query.getSingleResult();
 
-        turma.setQtdAluno(34);
+        turma.setQtdAluno(21);
         turma.setTurno("Manha");
         turma.setSerie("Quarta");
 

@@ -1,6 +1,5 @@
 package br.edu.ifpe.recife.x9academicoDEscorp.testes;
 
-
 import br.edu.ifpe.recife.x9academicoDescorp.model.Administrador;
 import br.edu.ifpe.recife.x9academicoDescorp.model.Endereco;
 import br.edu.ifpe.recife.x9academicoDescorp.model.Usuario;
@@ -67,17 +66,16 @@ public class JpqlCRUDAdmin {
             et = null;
         }
     }
-    
-    public static Endereco insereEndereco()
-    {
-            Endereco endereco = new Endereco();
+
+    public static Endereco insereEndereco() {
+        Endereco endereco = new Endereco();
 
         endereco.setCep("68.765-874");
         endereco.setCidade("olinda");
         endereco.setNumeroEndereco(123);
         endereco.setRua("abc");
         endereco.setUf("pe");
-        
+
         return endereco;
     }
 
@@ -86,7 +84,6 @@ public class JpqlCRUDAdmin {
         logger.info("Executando t01: CriarAdmin");
         Administrador admin = new Administrador();
 
-       
         admin.setCpf("075.335.464-07");
         admin.setNome("Gilbertojpql");
         admin.setEmail("aaa@bbb.com");
@@ -98,7 +95,6 @@ public class JpqlCRUDAdmin {
         admin.setDataNascimento(calendar.getTime());
         admin.setCargo("Coordenador");
         admin.setLogin("admin");
-        
 
         em.persist(admin);
         em.flush();
@@ -108,16 +104,15 @@ public class JpqlCRUDAdmin {
 
     @Test
     public void t02_buscaAdmin() {
-   
 
         String jpql = "SELECT u FROM Usuario u where u.login = ?1";
         Query query = em.createQuery(jpql);
         query.setParameter(1, "admin");
-       
-            Usuario usuario = (Usuario) query.getSingleResult();
-       
-            assertEquals("admin", usuario.getLogin());
-            
+
+        Usuario usuario = (Usuario) query.getSingleResult();
+
+        assertEquals("admin", usuario.getLogin());
+
     }
 
     @Test
@@ -125,38 +120,36 @@ public class JpqlCRUDAdmin {
         String jpql = "SELECT u FROM Usuario u where u.login = ?1";
         Query query = em.createQuery(jpql);
         query.setParameter(1, "admin");
-        
-            Usuario usuario = (Usuario) query.getSingleResult();
-            usuario.setEmail("apsn@a.recife");
-            usuario.setSenha("yT.765432");
-            em.merge(usuario);  
-            //Perguntar ao professor
-            em.flush();
-            //em.clear();
-            usuario = (Usuario) query.getSingleResult();
-            assertEquals("yT.765432", usuario.getSenha());
-            assertEquals("apsn@a.recife", usuario.getEmail());
+
+        Usuario usuario = (Usuario) query.getSingleResult();
+        usuario.setEmail("apsn@a.recife");
+        usuario.setSenha("yT.765432");
+        em.merge(usuario);
+        //Perguntar ao professor
+        em.flush();
+        em.clear();
+        usuario = (Usuario) query.getSingleResult();
+        assertEquals("yT.765432", usuario.getSenha());
+        assertEquals("apsn@a.recife", usuario.getEmail());
     }
 
     @Test
     public void t04_removeAdmin() {
-        
 
         String jpql = "SELECT u FROM Usuario u where u.login = ?1";
         Query query = em.createQuery(jpql);
         query.setParameter(1, "admin");
-        
-            Usuario usuario = (Usuario) query.getSingleResult();
 
-            em.remove(usuario);
-            
-            em.flush();
-            
-            em.clear();
- 
-            assertEquals(0, query.getResultList().size());
-       
+        Usuario usuario = (Usuario) query.getSingleResult();
+
+        em.remove(usuario);
+
+        em.flush();
+
+        em.clear();
+
+        assertEquals(0, query.getResultList().size());
+
     }
 
-   
 }

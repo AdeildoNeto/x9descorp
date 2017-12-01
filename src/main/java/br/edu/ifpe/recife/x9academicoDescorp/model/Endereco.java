@@ -6,6 +6,7 @@
 package br.edu.ifpe.recife.x9academicoDescorp.model;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,6 +32,8 @@ public class Endereco implements Serializable {
     @Id
     @Column(name = "idEndereco")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @NotNull
     private Long idEndereco;
 
     @OneToOne(mappedBy = "endereco", optional = false)
